@@ -1,9 +1,10 @@
 import {FormEvent, useState } from "react";
-import Sidebar from "../components/Sidebar";
-import usePostStore from "../store/PostStore";
+import Sidebar from "../../components/Sidebar";
+import usePostStore from "../../store/PostStore";
 import { useMutation} from "@tanstack/react-query";
 import { BeatLoader } from "react-spinners";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router";
 
 export interface Post{
     userId:string,
@@ -16,6 +17,8 @@ const CreatePost = () => {
 
     const created=usePostStore(state=>state.created)
     const newPost=usePostStore(state=>state.newPost)
+    const setActive=usePostStore(state=>state.setActive)
+    const navigate=useNavigate()
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
@@ -37,6 +40,8 @@ const CreatePost = () => {
          created()
          newPost(data)
          toast.success("Post successfully created! Now you have access to all posts.")
+         navigate('/step/2')
+         setActive("view")
         },
         onError:()=>{
         toast.error("Something went wrong!")
@@ -54,6 +59,7 @@ const CreatePost = () => {
     }
 
   return (
+    <div className="main">
     <div className="main-container create">
       <Sidebar />
       <div className="content">
@@ -74,6 +80,7 @@ const CreatePost = () => {
             <button type="submit" className="submit">{isPending ? <BeatLoader size={10}/> : "Submit"}</button>
         </form>
       </div>
+    </div>
     </div>
   );
 };

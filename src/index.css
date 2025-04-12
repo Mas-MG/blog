@@ -13,12 +13,13 @@ body {
 @layer base {
   /* app as base layer */
   body{
-    @apply bg-zinc-200 w-full min-h-[100vh] py-0 sm:!py-14 md:!py-16 lg:!py-20 xl:!py-24
+    @apply bg-zinc-200 w-full h-[100vh]
   }
-
-  /* home page */
+  .main{
+    @apply w-full h-[100vh] flex items-center justify-center
+  }
   .main-container{
-     @apply  container mx-auto bg-zinc-50 xl:w-[65%] sm:rounded-sm md:rounded-md lg:rounded-lg xl:rounded-xl flex overflow-hidden shadow-lg
+     @apply container mx-auto bg-zinc-50 xl:w-[65%] sm:rounded-sm md:rounded-md lg:rounded-lg xl:rounded-xl flex overflow-hidden shadow-lg
   }
 
   /* sidebar */
@@ -59,7 +60,7 @@ body {
     @apply border border-zinc-400 shadow-sm rounded-sm outline-none px-3 py-2 font-normal
   }
   .form-post-description textarea{
-    @apply h-28 max-h-28 min-h-28
+    @apply h-32 max-h-32 min-h-32
   }
   .submit{
     @apply bg-zinc-500 hover:bg-zinc-600 text-white/90 font-semibold px-2 py-1.5 sm:px-4 sm:py-2 shadow-md self-start rounded-sm cursor-pointer
@@ -67,4 +68,20 @@ body {
   }
 
   /* view all posts */
+  .posts{
+    @apply w-full max-h-[60vh] flex flex-wrap gap-[2%] my-3 sm:my-4 md:my-5 lg:my-6 xl:my-7 overflow-y-scroll
+  }
+  .card{
+    @apply shadow-xl w-[48.5%] border border-zinc-300 mb-4 rounded-lg px-5 py-3.5
+  }
+  .card-title{
+    @apply text-center font-semibold text-xl line-clamp-1
+  }
+  .card-userid{
+    @apply mt-4 font-semibold text-sm opacity-60
+  }
+  .card-description{
+    @apply h-[100px] line-clamp-5 my-3 text-sm
+  }
+
 }
