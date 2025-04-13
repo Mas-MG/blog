@@ -19,7 +19,7 @@ body {
     @apply w-full h-[100vh] flex items-center justify-center
   }
   .main-container{
-     @apply container mx-auto bg-zinc-50 xl:w-[65%] sm:rounded-sm md:rounded-md lg:rounded-lg xl:rounded-xl flex overflow-hidden shadow-lg
+     @apply container mx-auto bg-zinc-50 xl:w-[65%] sm:rounded-sm md:rounded-md lg:rounded-lg xl:rounded-xl flex flex-col sm:flex-row overflow-hidden shadow-lg
   }
 
   /* sidebar */
@@ -30,7 +30,7 @@ body {
     @apply font-bold text-[16px] sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-shadow-md
   }
   .list{
-    @apply flex flex-col mt-3 sm:mt-4 md:mt-5 lg:mt-6 xl:mt-7 w-max
+    @apply flex flex-row sm:flex-col mt-3 sm:mt-4 md:mt-5 lg:mt-6 xl:mt-7 w-max
   }
   .listitem{
    @apply hover:bg-zinc-200 transition-all duration-300 rounded-sm cursor-pointer
@@ -75,13 +75,13 @@ body {
     @apply shadow-xl w-[48.5%] border border-zinc-300 mb-4 rounded-lg px-5 py-3.5
   }
   .card-title{
-    @apply text-center font-semibold text-xl line-clamp-1
+    @apply text-center font-semibold text-sm md:text-[16px] lg:text-lg xl:text-xl line-clamp-1
   }
   .card-userid{
-    @apply mt-4 font-semibold text-sm opacity-60
+    @apply mt-4 font-semibold text-xs md:text-sm opacity-60
   }
   .card-description{
-    @apply h-[100px] line-clamp-5 my-3 text-sm
+    @apply h-[45px] md:h-[100px] !line-clamp-3 md:line-clamp-5 my-3 text-xs md:text-sm
   }
 
 }
